@@ -1,0 +1,68 @@
+﻿@model SafaFilm.Models.Blogs
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blogs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+        @if (Request.IsAuthenticated)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.imgpic)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.imgpic)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tm)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tm)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.users)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.users)
+            </dd>
+
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("برگشت به لیست", "Index")
+</p>

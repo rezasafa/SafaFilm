@@ -1,0 +1,155 @@
+﻿@model SafaFilm.Models.Films
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<div class="row myShows-Pic-Info-Body-Boxs">
+    <div class="col-md-8">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.countrys.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.countrys.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.styles.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.styles.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Body)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Body)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tags)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tags)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Director)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Director)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Producer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Producer)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Actress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Actress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.L480)
+            </dt>
+
+            <dd>
+                <a href="@Model.L480">
+                    @Html.DisplayFor(model => model.L480)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.L720)
+            </dt>
+
+            <dd>
+                <a href="@Model.L720">
+                    @Html.DisplayFor(model => model.L720)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.L1080)
+            </dt>
+
+            <dd>
+                <a href="@Model.L1080">
+                    @Html.DisplayFor(model => model.L1080)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LQ1080)
+            </dt>
+
+            <dd>
+                <a href="@Model.LQ1080">
+                    @Html.DisplayFor(model => model.LQ1080)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LALL)
+            </dt>
+
+            <dd>
+                <a href="@Model.LALL">
+                    @Html.DisplayFor(model => model.LALL)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SubTitle)
+            </dt>
+
+            <dd>
+                <a href="@Model.SubTitle">
+                    @Html.DisplayFor(model => model.SubTitle)
+                </a>
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Translate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Translate)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <img src="~/img/@Model.imgpic" class="myImgAvd" />
+    </div>    
+</div>
+<p>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("ویرایش", "Edit", new { id = Model.FilmID }) 
+    }
+    @Html.ActionLink("برگشت به لیست", "Index")
+</p>

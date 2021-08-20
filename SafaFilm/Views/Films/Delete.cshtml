@@ -1,0 +1,224 @@
+﻿@model SafaFilm.Models.Films
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Films</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.countrys.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.countrys.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.styles.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.styles.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgpic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imgpic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tags)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tags)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L480)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L480)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P480)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P480)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L720)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L720)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P720)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P720)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L1080)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L1080)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P1080)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P1080)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LQ1080)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LQ1080)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PQ1080)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PQ1080)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LALL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LALL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PALL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PALL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Translate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Translate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.users)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.users)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-outline-danger" /> |
+            @Html.ActionLink("برگشت به لیست", "Index")
+        </div>
+    }
+</div>

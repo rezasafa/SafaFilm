@@ -1,0 +1,72 @@
+﻿@model SafaFilm.Models.Contactus
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Contactus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Names)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Names)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Messages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Messages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.users)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.users)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-outline-danger" /> |
+            @Html.ActionLink("برگشت به لیست", "Index")
+        </div>
+    }
+</div>

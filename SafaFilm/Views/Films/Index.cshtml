@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SafaFilm.Models.Films>
+
+@{
+    ViewBag.Title = "لیست فیلم ها";
+}
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("جدید", "Create")
+    </p>
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4">
+        <a href="~/Films/Details/@item.FilmID">
+            <table>
+                <tr>
+                    <td>
+                        <img src="~/img/@item.imgpic" class="myImgAvd" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>
+                            @item.Title
+                        </h6>
+                    </td>
+                </tr>
+            </table>
+        </a>
+        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+        {
+            <div>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.FilmID }) |
+                @Html.ActionLink("نمایش", "Details", new { id = item.FilmID }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.FilmID })
+            </div>
+        }
+    </div>
+    }
+</div>
+

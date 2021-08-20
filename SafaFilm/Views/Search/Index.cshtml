@@ -1,0 +1,31 @@
+﻿@using SafaFilm.Controllers
+@model SearchModel
+@{
+    ViewBag.Title = "جستجو";
+}
+
+<div class="row">
+    @{
+        foreach (var item in Model.LFilms)
+        {
+            <div class="col-md-3">
+                <a href="~/Films/Details/@item.FilmID">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="~/img/@item.imgpic" class="myImgAvd" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>
+                                    @item.Title
+                                </h6>
+                            </td>
+                        </tr>
+                    </table>
+                </a>
+            </div>
+        }
+    }
+</div>

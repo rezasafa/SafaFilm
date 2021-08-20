@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - صفا فیلم</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="myfont" style="text-align: right;">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="~/Home/Index">صفا فیلم</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Home/Index">خانه</a>
+                </li>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Styles/Index">سبک</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Countrys/Index">کشور</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Films/Index">فیلم ها</a>
+                    </li>
+                }
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/News/Index">اخبار </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Blogs/Index">بلاگ </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Home/About">درباره ما </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Contactus/Create">ارتباط با ما</a>
+                </li>
+                @Html.Partial("_LoginPartial")
+            </ul>
+            <form method="get" action="~/Search/Index" class="form-inline my-2 my-lg-0">
+                <input name="q" id="q" class="form-control mr-sm-2" style="width:300px;" type="search" placeholder="نام فیلم" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">جستجو</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container body-content" style="margin-top: 10px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - صفا فیلم</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

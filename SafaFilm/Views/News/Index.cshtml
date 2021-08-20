@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SafaFilm.Models.News>
+
+@{
+    ViewBag.Title = "خبر";
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("جدید", "Create")
+    </p>
+}
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4">
+        <a href="~/News/Details/@item.ID">
+            <h1>
+                @item.Title
+            </h1>
+        </a>
+        @if (Request.IsAuthenticated)
+        {
+            <div>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("نمایش", "Details", new { id = item.ID }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+            </div>
+        }
+    </div>
+    }
+</div>
